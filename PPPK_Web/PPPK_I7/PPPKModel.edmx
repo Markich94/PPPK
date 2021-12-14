@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PPPK_ProjektModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Grad">
+          <Key>
+            <PropertyRef Name="IDGrad" />
+          </Key>
+          <Property Name="IDGrad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GeoSirina" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GeoVisina" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PutniNalog">
+          <Key>
+            <PropertyRef Name="IDPutniNalog" />
+          </Key>
+          <Property Name="IDPutniNalog" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VozacID" Type="int" Nullable="false" />
+          <Property Name="VoziloID" Type="int" Nullable="false" />
+          <Property Name="Datum" Type="date" Nullable="false" />
+          <Property Name="Tip" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="KoordinataA" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="KoordinataB" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PrijedeniKilometri" Type="int" />
+          <Property Name="ProsjecnaBrzina" Type="int" />
+          <Property Name="PotrosenoGorivo" Type="int" />
+        </EntityType>
+        <EntityType Name="Servis">
+          <Key>
+            <PropertyRef Name="IDServis" />
+          </Key>
+          <Property Name="IDServis" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vozilo" Type="int" Nullable="false" />
+          <Property Name="StanjeKilometara" Type="int" Nullable="false" />
+          <Property Name="Napomena" Type="nvarchar(max)" />
+          <Property Name="IduciServis" Type="int" Nullable="false" />
+          <Property Name="Cijena" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vozac">
+          <Key>
+            <PropertyRef Name="IDVozac" />
+          </Key>
+          <Property Name="IDVozac" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ime" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prezime" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BrojMobitela" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BrojVozacke" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vozilo">
+          <Key>
+            <PropertyRef Name="IDVozilo" />
+          </Key>
+          <Property Name="IDVozilo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Marka" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tip" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GodinaProizvodnje" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="InicijalnoStanjeKilometara" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PPPK_ProjektModelStoreContainer">
+          <EntitySet Name="Grad" EntityType="Self.Grad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PutniNalog" EntityType="Self.PutniNalog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Servis" EntityType="Self.Servis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vozac" EntityType="Self.Vozac" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vozilo" EntityType="Self.Vozilo" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PPPK_ProjektModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Grad">
+          <Key>
+            <PropertyRef Name="IDGrad" />
+          </Key>
+          <Property Name="IDGrad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GeoSirina" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GeoVisina" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PutniNalog">
+          <Key>
+            <PropertyRef Name="IDPutniNalog" />
+          </Key>
+          <Property Name="IDPutniNalog" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VozacID" Type="Int32" Nullable="false" />
+          <Property Name="VoziloID" Type="Int32" Nullable="false" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Tip" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KoordinataA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KoordinataB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PrijedeniKilometri" Type="Int32" />
+          <Property Name="ProsjecnaBrzina" Type="Int32" />
+          <Property Name="PotrosenoGorivo" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Servis">
+          <Key>
+            <PropertyRef Name="IDServis" />
+          </Key>
+          <Property Name="IDServis" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vozilo" Type="Int32" Nullable="false" />
+          <Property Name="StanjeKilometara" Type="Int32" Nullable="false" />
+          <Property Name="Napomena" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IduciServis" Type="Int32" Nullable="false" />
+          <Property Name="Cijena" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vozac">
+          <Key>
+            <PropertyRef Name="IDVozac" />
+          </Key>
+          <Property Name="IDVozac" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BrojMobitela" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BrojVozacke" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vozilo">
+          <Key>
+            <PropertyRef Name="IDVozilo" />
+          </Key>
+          <Property Name="IDVozilo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Marka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GodinaProizvodnje" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="InicijalnoStanjeKilometara" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PPPK_ProjektEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Grad" EntityType="Self.Grad" />
+          <EntitySet Name="PutniNalog" EntityType="Self.PutniNalog" />
+          <EntitySet Name="Servis" EntityType="Self.Servis" />
+          <EntitySet Name="Vozac" EntityType="Self.Vozac" />
+          <EntitySet Name="Vozilo" EntityType="Self.Vozilo" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PPPK_ProjektModelStoreContainer" CdmEntityContainer="PPPK_ProjektEntities">
+          <EntitySetMapping Name="Grad">
+            <EntityTypeMapping TypeName="PPPK_ProjektModel.Grad">
+              <MappingFragment StoreEntitySet="Grad">
+                <ScalarProperty Name="IDGrad" ColumnName="IDGrad" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="GeoSirina" ColumnName="GeoSirina" />
+                <ScalarProperty Name="GeoVisina" ColumnName="GeoVisina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PutniNalog">
+            <EntityTypeMapping TypeName="PPPK_ProjektModel.PutniNalog">
+              <MappingFragment StoreEntitySet="PutniNalog">
+                <ScalarProperty Name="IDPutniNalog" ColumnName="IDPutniNalog" />
+                <ScalarProperty Name="VozacID" ColumnName="VozacID" />
+                <ScalarProperty Name="VoziloID" ColumnName="VoziloID" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Tip" ColumnName="Tip" />
+                <ScalarProperty Name="KoordinataA" ColumnName="KoordinataA" />
+                <ScalarProperty Name="KoordinataB" ColumnName="KoordinataB" />
+                <ScalarProperty Name="PrijedeniKilometri" ColumnName="PrijedeniKilometri" />
+                <ScalarProperty Name="ProsjecnaBrzina" ColumnName="ProsjecnaBrzina" />
+                <ScalarProperty Name="PotrosenoGorivo" ColumnName="PotrosenoGorivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Servis">
+            <EntityTypeMapping TypeName="PPPK_ProjektModel.Servis">
+              <MappingFragment StoreEntitySet="Servis">
+                <ScalarProperty Name="IDServis" ColumnName="IDServis" />
+                <ScalarProperty Name="Vozilo" ColumnName="Vozilo" />
+                <ScalarProperty Name="StanjeKilometara" ColumnName="StanjeKilometara" />
+                <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+                <ScalarProperty Name="IduciServis" ColumnName="IduciServis" />
+                <ScalarProperty Name="Cijena" ColumnName="Cijena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vozac">
+            <EntityTypeMapping TypeName="PPPK_ProjektModel.Vozac">
+              <MappingFragment StoreEntitySet="Vozac">
+                <ScalarProperty Name="IDVozac" ColumnName="IDVozac" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+                <ScalarProperty Name="BrojMobitela" ColumnName="BrojMobitela" />
+                <ScalarProperty Name="BrojVozacke" ColumnName="BrojVozacke" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vozilo">
+            <EntityTypeMapping TypeName="PPPK_ProjektModel.Vozilo">
+              <MappingFragment StoreEntitySet="Vozilo">
+                <ScalarProperty Name="IDVozilo" ColumnName="IDVozilo" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="Tip" ColumnName="Tip" />
+                <ScalarProperty Name="GodinaProizvodnje" ColumnName="GodinaProizvodnje" />
+                <ScalarProperty Name="InicijalnoStanjeKilometara" ColumnName="InicijalnoStanjeKilometara" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

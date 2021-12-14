@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PPPK_ProjektModelStoreContainer" CdmEntityContainer="PPPK_ProjektEntities">
+    <EntitySetMapping Name="Grad">
+      <EntityTypeMapping TypeName="PPPK_ProjektModel.Grad">
+        <MappingFragment StoreEntitySet="Grad">
+          <ScalarProperty Name="IDGrad" ColumnName="IDGrad" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="GeoSirina" ColumnName="GeoSirina" />
+          <ScalarProperty Name="GeoVisina" ColumnName="GeoVisina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PutniNalog">
+      <EntityTypeMapping TypeName="PPPK_ProjektModel.PutniNalog">
+        <MappingFragment StoreEntitySet="PutniNalog">
+          <ScalarProperty Name="IDPutniNalog" ColumnName="IDPutniNalog" />
+          <ScalarProperty Name="VozacID" ColumnName="VozacID" />
+          <ScalarProperty Name="VoziloID" ColumnName="VoziloID" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+          <ScalarProperty Name="Tip" ColumnName="Tip" />
+          <ScalarProperty Name="KoordinataA" ColumnName="KoordinataA" />
+          <ScalarProperty Name="KoordinataB" ColumnName="KoordinataB" />
+          <ScalarProperty Name="PrijedeniKilometri" ColumnName="PrijedeniKilometri" />
+          <ScalarProperty Name="ProsjecnaBrzina" ColumnName="ProsjecnaBrzina" />
+          <ScalarProperty Name="PotrosenoGorivo" ColumnName="PotrosenoGorivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Servis">
+      <EntityTypeMapping TypeName="PPPK_ProjektModel.Servis">
+        <MappingFragment StoreEntitySet="Servis">
+          <ScalarProperty Name="IDServis" ColumnName="IDServis" />
+          <ScalarProperty Name="Vozilo" ColumnName="Vozilo" />
+          <ScalarProperty Name="StanjeKilometara" ColumnName="StanjeKilometara" />
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="IduciServis" ColumnName="IduciServis" />
+          <ScalarProperty Name="Cijena" ColumnName="Cijena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vozac">
+      <EntityTypeMapping TypeName="PPPK_ProjektModel.Vozac">
+        <MappingFragment StoreEntitySet="Vozac">
+          <ScalarProperty Name="IDVozac" ColumnName="IDVozac" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="BrojMobitela" ColumnName="BrojMobitela" />
+          <ScalarProperty Name="BrojVozacke" ColumnName="BrojVozacke" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vozilo">
+      <EntityTypeMapping TypeName="PPPK_ProjektModel.Vozilo">
+        <MappingFragment StoreEntitySet="Vozilo">
+          <ScalarProperty Name="IDVozilo" ColumnName="IDVozilo" />
+          <ScalarProperty Name="Marka" ColumnName="Marka" />
+          <ScalarProperty Name="Tip" ColumnName="Tip" />
+          <ScalarProperty Name="GodinaProizvodnje" ColumnName="GodinaProizvodnje" />
+          <ScalarProperty Name="InicijalnoStanjeKilometara" ColumnName="InicijalnoStanjeKilometara" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="yes"?>
+<Nalozi>
+  <xs:schema id="Nalozi" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="Nalozi" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="PutniNalog">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="IDPutniNalog" type="xs:int" minOccurs="0" />
+                <xs:element name="VozacID" type="xs:int" minOccurs="0" />
+                <xs:element name="VoziloID" type="xs:int" minOccurs="0" />
+                <xs:element name="Datum" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="Tip" type="xs:string" minOccurs="0" />
+                <xs:element name="KoordinataA" type="xs:string" minOccurs="0" />
+                <xs:element name="KoordinataB" type="xs:string" minOccurs="0" />
+                <xs:element name="PrijedeniKilometri" type="xs:int" minOccurs="0" />
+                <xs:element name="ProsjecnaBrzina" type="xs:int" minOccurs="0" />
+                <xs:element name="PotrosenoGorivo" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <PutniNalog>
+    <IDPutniNalog>24</IDPutniNalog>
+    <VozacID>1049</VozacID>
+    <VoziloID>1046</VoziloID>
+    <Datum>2021-07-06T00:00:00+02:00</Datum>
+    <Tip>1</Tip>
+    <KoordinataA>Zagreb</KoordinataA>
+    <KoordinataB>Karlovac</KoordinataB>
+    <PrijedeniKilometri>0</PrijedeniKilometri>
+    <ProsjecnaBrzina>0</ProsjecnaBrzina>
+    <PotrosenoGorivo>0</PotrosenoGorivo>
+  </PutniNalog>
+</Nalozi>

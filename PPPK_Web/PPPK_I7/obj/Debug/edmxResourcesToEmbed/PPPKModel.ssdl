@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PPPK_ProjektModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Grad">
+    <Key>
+      <PropertyRef Name="IDGrad" />
+    </Key>
+    <Property Name="IDGrad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naziv" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GeoSirina" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GeoVisina" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PutniNalog">
+    <Key>
+      <PropertyRef Name="IDPutniNalog" />
+    </Key>
+    <Property Name="IDPutniNalog" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VozacID" Type="int" Nullable="false" />
+    <Property Name="VoziloID" Type="int" Nullable="false" />
+    <Property Name="Datum" Type="date" Nullable="false" />
+    <Property Name="Tip" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="KoordinataA" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="KoordinataB" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PrijedeniKilometri" Type="int" />
+    <Property Name="ProsjecnaBrzina" Type="int" />
+    <Property Name="PotrosenoGorivo" Type="int" />
+  </EntityType>
+  <EntityType Name="Servis">
+    <Key>
+      <PropertyRef Name="IDServis" />
+    </Key>
+    <Property Name="IDServis" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Vozilo" Type="int" Nullable="false" />
+    <Property Name="StanjeKilometara" Type="int" Nullable="false" />
+    <Property Name="Napomena" Type="nvarchar(max)" />
+    <Property Name="IduciServis" Type="int" Nullable="false" />
+    <Property Name="Cijena" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vozac">
+    <Key>
+      <PropertyRef Name="IDVozac" />
+    </Key>
+    <Property Name="IDVozac" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ime" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Prezime" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BrojMobitela" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BrojVozacke" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vozilo">
+    <Key>
+      <PropertyRef Name="IDVozilo" />
+    </Key>
+    <Property Name="IDVozilo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Marka" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Tip" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GodinaProizvodnje" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="InicijalnoStanjeKilometara" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="PPPK_ProjektModelStoreContainer">
+    <EntitySet Name="Grad" EntityType="Self.Grad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PutniNalog" EntityType="Self.PutniNalog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Servis" EntityType="Self.Servis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vozac" EntityType="Self.Vozac" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vozilo" EntityType="Self.Vozilo" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
